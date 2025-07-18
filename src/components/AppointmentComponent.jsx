@@ -91,7 +91,7 @@ function AppointmentComponent({closeComponent, isActive}){
 
     return (<>
         <section className={`w-full h-screen bg-[#161615ba] fixed bottom-0 left-0 z-50 pb-[80px] flex items-center justify-center transition-all duration-500 overflow-hidden ${isActive ? "top-0" : "top-full"}`}>
-            <div className="w-full max-w-full bg-white rounded-t-xl h-[85vh] overflow-y-auto absolute bottom-0 pb-8 px-6">
+            <div className="w-full max-w-full bg-white rounded-t-xl h-[85vh] overflow-y-auto absolute bottom-0 pb-10 px-6">
                 <RiCloseLargeFill size={35} className="text-black cursor-pointer absolute right-0 mt-2 mr-2" onClick={closeComponent}/>
                 <div>
                     <h3 className="text-center py-7 font-bold text-blue-800 text-4xl font-[mulish]  tracking-wide">Book an Appoinment</h3>
