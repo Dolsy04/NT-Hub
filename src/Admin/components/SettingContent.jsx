@@ -3,7 +3,7 @@ import { useAuth } from "../../Firebase/authContext.jsx";
 import profileImage from "../../assets/profile-image.png";
 import { IoClose, IoSearchSharp } from "react-icons/io5";
 import {db, auth} from "../../Firebase/DB-configure.js";
-import { collection, doc, getDoc, getDocs, setDoc, query } from "firebase/firestore";
+import { collection, doc, getDoc, getDocs, setDoc, query,deleteDoc } from "firebase/firestore";
 import {createUserWithEmailAndPassword, sendPasswordResetEmail} from "firebase/auth";
 
 
