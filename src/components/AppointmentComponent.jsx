@@ -41,8 +41,8 @@ function AppointmentComponent({closeComponent, isActive}){
 
         setIsLoading(true);
         const [hour, minute] = time.split(":").map(Number);
-    const [year, month, day] = date.split("-").map(Number);
-    const combinedDateTime = new Date(year, month - 1, day, hour, minute);
+        const [year, month, day] = date.split("-").map(Number);
+        const combinedDateTime = new Date(year, month - 1, day, hour, minute);
 
         try{
             await addDoc(collection(db, "appointment-booked"), {
@@ -95,8 +95,8 @@ function AppointmentComponent({closeComponent, isActive}){
                 <RiCloseLargeFill size={35} className="text-black cursor-pointer absolute right-0 mt-2 mr-2" onClick={closeComponent}/>
                 <div>
                     <h3 className="text-center py-7 font-bold text-blue-800 text-4xl font-[mulish]  tracking-wide">Book an Appoinment</h3>
-                    <form onSubmit={handleAppointment} className="w-3/4  mx-auto">
-                        <div className="flex items-center justify-around">
+                    <form onSubmit={handleAppointment} className="w-full lg:w-3/4  mx-auto">
+                        <div className="flex items-center justify-around lg:flex-nowrap flex-wrap">
                             <div className=" w-md h-auto">
                                 <label className="font-[mulish] text-base ml-1">First Name</label><br />
                                 <input type="text" value={firstName} onChange={(e)=> setFirstName(e.target.value)} placeholder="Joe Doe" className="border-gray-400 border w-full h-[40px] mt-2 px-2 font-[mulish] rounded focus:outline-hidden text-lg text-black"/>
@@ -106,7 +106,7 @@ function AppointmentComponent({closeComponent, isActive}){
                                 <input type="text"  value={otherName} onChange={(e)=> setOtherName(e.target.value)} placeholder="Joe Doe" className="border-gray-400 border w-full h-[40px] mt-2 px-2 font-[mulish] rounded focus:outline-hidden text-lg text-black"/>
                             </div>
                         </div>
-                        <div className="mt-7 flex items-center justify-around">
+                        <div className="mt-7 flex items-center justify-around lg:flex-nowrap flex-wrap">
                             <div className=" w-md h-auto">
                                 <label className="font-[mulish] text-base ml-1">Email</label><br />
                                 <input type="email" value={email} onChange={(e)=> setEmail(e.target.value)} placeholder="your@gmail.com" className="border-gray-400 border w-full h-[40px] mt-2 px-2 font-[mulish] rounded focus:outline-hidden text-lg text-black"/>
@@ -116,7 +116,7 @@ function AppointmentComponent({closeComponent, isActive}){
                                 <input type="tel" value={contactNumber} onChange={(e)=> setContactNumber(e.target.value)} placeholder="+234 000 000 000" className="border-gray-400 border w-full h-[40px] mt-2 px-2 font-[mulish] rounded focus:outline-hidden text-lg text-black"/>
                             </div>
                         </div>
-                        <div className="mt-7 flex items-center justify-around">
+                        <div className="mt-7 flex items-center justify-around lg:flex-nowrap flex-wrap">
                             <div className=" w-md h-auto">
                                 <label className="font-[mulish] text-base ml-1">Preferred Date</label>
                                 <input type="date" value={date} onChange={(e)=> setDate(e.target.value)} className="border-gray-400 border w-full h-[40px] mt-2 px-2 font-[mulish] rounded focus:outline-hidden text-medium text-black" />
@@ -126,7 +126,7 @@ function AppointmentComponent({closeComponent, isActive}){
                                <input type="time" value={time} onChange={(e)=> setTime(e.target.value)} className="border-gray-400 border w-full h-[40px] mt-2 px-2 font-[mulish] rounded focus:outline-hidden text-medium text-black" />
                             </div>
                         </div>
-                        <div className="mt-7 flex items-center justify-around">
+                        <div className="mt-7 flex items-center justify-around lg:flex-nowrap flex-wrap">
                             <div className=" w-md h-auto">
                                 <label className="font-[mulish] text-base ml-1">Service Type</label>
                                 <select value={servicesType} onChange={(e)=> setServicesType(e.target.value)} className="border-gray-400 border w-full h-[40px] mt-2 px-2 font-[mulish] rounded focus:outline-hidden text-medium text-black">
