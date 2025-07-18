@@ -3,7 +3,8 @@ import { useAuth } from "../../Firebase/authContext.jsx";
 import profileImage from "../../assets/profile-image.png";
 import { IoClose, IoSearchSharp } from "react-icons/io5";
 import {db, auth} from "../../Firebase/DB-configure.js";
-import { collection, doc, getDoc, getDocs, setDoc, query,deleteDoc } from "firebase/firestore";
+import { secondaryAuth } from "../../Firebase/DB-configure";
+import { collection, doc, getDoc, getDocs, setDoc, query, deleteDoc } from "firebase/firestore";
 import {createUserWithEmailAndPassword, sendPasswordResetEmail} from "firebase/auth";
 
 
@@ -55,9 +56,9 @@ function SettingContent(){
         }
         setIsLoading(true);
         try{
-            const userCredential = await createUserWithEmailAndPassword(auth, trimedEmail, trimedPassword);
+            const userCredential = await createUserWithEmailAndPassword(secondaryAuth, trimedEmail, trimedPassword);
             const newUser = userCredential.user;
-
+        
             await setDoc(doc(db, "admin-users", newUser.uid), {
                 uid: newUser.uid,
                 fullname: trimedName,
