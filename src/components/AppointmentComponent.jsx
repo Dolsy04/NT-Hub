@@ -162,7 +162,7 @@ function AppointmentComponent({closeComponent, isActive}){
 
                         {errorMessage && <p className="text-red-600 text-center my-4 font-[mulish] font-bold text-lg">{errorMessage}</p>}
                         
-                        <div className="w-full flex items-center justify-center">
+                        <div className="w-full flex items-center justify-center mb-20">
                             <button type="submit" className="bg-blue-800 py-3 px-8 cursor-pointer mt-10 rounded-3xl text-lg text-white transition-all duration-700 ease-in-out hover:bg-blue-950" disabled={loading}>
                                 {loading ? (
                                      <svg
